@@ -7,12 +7,16 @@ import { TwoComponent } from './shared/components/two/two.component';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { PostDashboardComponent } from './shared/components/post-dashboard/post-dashboard.component';
+import { PostCardComponent } from './shared/components/post-card/post-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    PostDashboardComponent,
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
