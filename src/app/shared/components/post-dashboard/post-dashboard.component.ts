@@ -14,4 +14,8 @@ export class PostDashboardComponent implements OnInit {
     this.postArr = postData
   }
 
+  trackByFun(index: number, post: Ipost){
+    return post.id
+  }
+
 }
