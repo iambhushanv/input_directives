@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { PostDashboardComponent } from './shared/components/post-dashboard/post-dashboard.component';
 import { PostCardComponent } from './shared/components/post-card/post-card.component';
+import { MobileDashboardComponent } from './shared/components/mobile-dashboard/mobile-dashboard.component';
+import { MobileCardComponent } from './shared/components/mobile-card/mobile-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PostCardComponent } from './shared/components/post-card/post-card.compo
     OneComponent,
     TwoComponent,
     PostDashboardComponent,
-    PostCardComponent
+    PostCardComponent,
+    MobileDashboardComponent,
+    MobileCardComponent
   ],
   imports: [
     BrowserModule,

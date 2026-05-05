@@ -1,0 +1,17 @@
+
+<div class="row" *ngIf="mobileArr.length > 0 ; else noMobiles">
+    <div class="col-12 mb-4" *ngFor="let mobile of mobileArr; trackBy : trackByFun">
+        <app-mobile-card [mobileObj]="mobile"></app-mobile-card>
+    </div>
+</div>
+
+<ng-template #noMobiles>
+    <p class="alert alert-info">
+        No Mobile Data !!!
+    </p>
+</ng-template>
+
+
+
+
+

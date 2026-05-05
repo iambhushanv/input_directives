@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body"
+            [ngClass]="{
+                noProAval : !mobileObj.isAvailable
+            }"
+            >
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-container">
+                            <img *ngIf="mobileObj.image; else noimg"
+                                [src]="mobileObj.image" 
+                                [alt]="mobileObj.name"
+                                [title]="mobileObj.name" class="w-100" />
+                        </div>
+
+                        <ng-template #noimg>
+                            <p class="noImgText">
+                                No Image
+                            </p>
+                        </ng-template>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button 
+                            [disabled]="!mobileObj.isAvailable"
+                            class="btn btn-outline-primary">Add to Cart</button>
+                            <button
+                            [disabled]="!mobileObj.isAvailable"
+                            class="btn btn-outline-warning">Buy Now</button>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>{{mobileObj.name}}
+                            <small class="badge"
+                            [ngClass]="{
+                                'badge-success' : mobileObj.rating >= 4,
+                                'badge-warning' : mobileObj.rating >= 3 && mobileObj.rating < 4,
+                                'badge-danger' : mobileObj.rating < 3
+                            }"
+                            >
+                                {{mobileObj.rating}}
+                            </small>
+                        </h2>
+
+                        <h5>Features</h5>
+
+                        <ul class="list-group">
+                            <li class="list-group-item"
+                            *ngFor="let features of mobileObj.features"
+                            >
+                            {{features}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h3>
+                            {{mobileObj.price - (mobileObj.price * .15) | currency : 'INR'}}
+                        <br />
+                        <small>
+                            <del>
+                                {{mobileObj.price | currency : 'INR'}}
+                            </del>
+                        </small>
+                        </h3>
+
+                        <strong class="text-success" *ngIf="mobileObj.noOfItems < 10">
+                           Only {{mobileObj.noOfItems}} left !!!
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <p class="text-danger isNotAvailable " *ngIf="!mobileObj.isAvailable">
+                Product is not Available
+            </p>
+        </div>
+    </div>
+</div>

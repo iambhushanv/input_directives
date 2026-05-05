@@ -9,9 +9,6 @@ import { Ipost } from '../../models/post';
 export class PostCardComponent implements OnInit {
   @Input() postObj !: Ipost;
   constructor() { }
-
-
-
   
   ngOnInit(): void {
   }

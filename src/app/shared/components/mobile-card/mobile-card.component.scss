@@ -1,0 +1,43 @@
+// @mixin flex-center {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+@mixin flex-center($align: center, $justify: center){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.img-container {
+    height: 300px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .noImgText {
+        width: 100%;
+        height: 100%;
+        background-color: #ededed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.noProAval {
+    filter: blur(1px) grayscale(1)
+}
+
+.isNotAvailable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    @include flex-center
+}
